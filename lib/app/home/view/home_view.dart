@@ -20,10 +20,12 @@ class HomeView extends HomeViewModel {
               return ListTile(
                 onTap: (){
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => Detail()));
+                      .push(MaterialPageRoute(builder: (context) => Detail(
+                        model1?[index].cihaz_no
+                      )));
                 },
                 title: Text(
-                  model1?[index].ad_soyad ?? "null kardesim",
+                  model1?[index].ad_soyad ?? "null",
                   style: TextStyle(color: Colors.black),
                 ),
               );

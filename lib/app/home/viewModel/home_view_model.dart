@@ -13,7 +13,7 @@ abstract class HomeViewModel extends State<Home> with CacheManager {
   late final HomeService homeService;
   final Dio dio = NetworkService.instance.dio;
 
-  UserDevicesList? _userDevicesList;
+  UserDevicesList? userDevicesList;
 
   List<CihazNo>? _models = [];
 
@@ -30,9 +30,6 @@ abstract class HomeViewModel extends State<Home> with CacheManager {
 
   Future<void> fetchUserDevicesList() async {
     final token = await readAuthManager.getToken();
-    print("Shared Preferencesdaki token:");
-    print(token);
-    print("UserdevicesList fonksiyonu calisti");
 
     final response = await homeService.getUserDevicesList(
       UserDevicesListRequest(
@@ -42,14 +39,10 @@ abstract class HomeViewModel extends State<Home> with CacheManager {
       ),
     );
 
-    print("User id : ");
-    print(response?.userid.toString());
 
     if (response?.token != null) {
-      print("response null degil");
-      print(response?.userid);
-      _userDevicesList = response;
-      _models = _userDevicesList?.cihaz_no;
+      userDevicesList = response;
+      _models = userDevicesList?.cihaz_no;
     }
   }
 }
