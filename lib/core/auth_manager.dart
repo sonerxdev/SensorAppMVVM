@@ -11,6 +11,7 @@ class AuthenticationManager extends CacheManager {
 
   bool isLogin = false;
 
+
   //void removeAllData() {}
 
   Future<void> fetchUserLogin() async {

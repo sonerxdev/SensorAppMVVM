@@ -6,9 +6,9 @@ part 'user_devices_list_model.g.dart';
 class UserDevicesList {
   bool? token;
   int? userid;
-  List<CihazNo>? cihazNo;
+  List<CihazNo>? cihaz_no;
 
-  UserDevicesList({this.token, this.userid, this.cihazNo});
+  UserDevicesList({this.token, this.userid, this.cihaz_no});
 
 
    factory UserDevicesList.fromJson(Map<String, dynamic> json) {
@@ -27,12 +27,12 @@ class UserDevicesList {
 
 @JsonSerializable()
 class CihazNo {
-  int? cihazNo;
-  String? adSoyad;
+  int? cihaz_no;
+  String? ad_soyad;
   String? konum;
-  String? sonHaberlesme;
+  String? son_haberlesme;
 
-  CihazNo({this.cihazNo, this.adSoyad, this.konum, this.sonHaberlesme});
+  CihazNo({this.cihaz_no, this.ad_soyad, this.konum, this.son_haberlesme});
 
 
   factory  CihazNo.fromJson(Map<String, dynamic> json) {

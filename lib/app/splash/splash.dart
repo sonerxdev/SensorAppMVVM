@@ -27,6 +27,8 @@ class _SplashViewState extends State<SplashView> {
   AuthenticationManager get readAuthManager =>
       context.read<AuthenticationManager>();
 
+      
+
   @override
   void initState() {
     super.initState();

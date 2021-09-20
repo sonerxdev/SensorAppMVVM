@@ -6,11 +6,11 @@ part 'user_devices_list_request.g.dart';
 
 @JsonSerializable()
 class UserDevicesListRequest  extends BaseModel<UserDevicesListRequest>{
-  String? appToken;
+  String? app_token;
   int? userid;
-  List<int>? cihazNo;
+  List<int>? cihaz_no;
 
-  UserDevicesListRequest({this.appToken, this.userid, this.cihazNo});
+  UserDevicesListRequest({this.app_token, this.userid, this.cihaz_no});
 
   @override
   UserDevicesListRequest fromJson(Map<String, dynamic> json) {

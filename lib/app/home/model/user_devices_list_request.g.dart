@@ -9,16 +9,17 @@ part of 'user_devices_list_request.dart';
 UserDevicesListRequest _$UserDevicesListRequestFromJson(
     Map<String, dynamic> json) {
   return UserDevicesListRequest(
-    appToken: json['appToken'] as String?,
+    app_token: json['app_token'] as String?,
     userid: json['userid'] as int?,
-    cihazNo: (json['cihazNo'] as List<dynamic>?)?.map((e) => e as int).toList(),
+    cihaz_no:
+        (json['cihaz_no'] as List<dynamic>?)?.map((e) => e as int).toList(),
   );
 }
 
 Map<String, dynamic> _$UserDevicesListRequestToJson(
         UserDevicesListRequest instance) =>
     <String, dynamic>{
-      'appToken': instance.appToken,
+      'app_token': instance.app_token,
       'userid': instance.userid,
-      'cihazNo': instance.cihazNo,
+      'cihaz_no': instance.cihaz_no,
     };

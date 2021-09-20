@@ -20,20 +20,19 @@ abstract class LoginViewModel extends State<Login>
   }
 
   Future<void> fetchUserLogin(String email, String password) async {
-    final response = await loginService
-        .getLogin(UserRequestModel(email: email, password: password));
+    final response = await loginService.getLogin(
+      UserRequestModel(email: email, password: password),
+    );
 
     if (response?.app_token != null) {
+      print("bu login printi: ");
       print(response?.app_token);
       saveToken(response?.app_token ?? '');
       navigateToHome();
     }
-  
-    
   }
 
   void navigateToHome() {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => Home()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
   }
 }

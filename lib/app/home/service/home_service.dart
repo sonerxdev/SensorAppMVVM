@@ -49,7 +49,9 @@ class HomeService extends IHomeService {
 
   @override
   Future<UserDevicesList?> getUserDevicesList(
-      UserDevicesListRequest model) async {
+      UserDevicesListRequest? model) async {
+    print("Homeservice modeli: ");
+    print(model?.userid);
     final response = await dio.post(
       ServicePath.PATH.rawValue,
       data: model,
@@ -57,7 +59,8 @@ class HomeService extends IHomeService {
     );
 
     if (response.statusCode == HttpStatus.ok) {
-      print(response);
+      print("response Statuscode OK");
+      print(response.data);
       return UserDevicesList.fromJson(response.data);
     }
 
