@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uzel_bilisim_task/app/home/service/home_service.dart';
+import 'package:uzel_bilisim_task/app/home/home.dart';
 import 'package:uzel_bilisim_task/app/splash/splash.dart';
 import 'package:uzel_bilisim_task/core/auth_manager.dart';
 
@@ -11,9 +11,9 @@ void main() {
         Provider<AuthenticationManager>(
           create: (context) => AuthenticationManager(context: context),
         ), 
-          ChangeNotifierProvider(
-          create: (_) => HomeService(),
-        ),
+         Provider<Home>(
+          create: (context) => Home(),
+        ), 
       ],
       child: MyApp(),
     ),

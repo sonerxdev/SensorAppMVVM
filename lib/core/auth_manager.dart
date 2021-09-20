@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'cache_manager.dart';
 
 class AuthenticationManager extends CacheManager {
@@ -12,10 +11,12 @@ class AuthenticationManager extends CacheManager {
 
   bool isLogin = false;
 
-  void removeAllData() {}
+  //void removeAllData() {}
+
   Future<void> fetchUserLogin() async {
     final token = await getToken();
-    if (token != null) {
+    print(token);
+    if (token != null && token.length > 3) {
       isLogin = true;
     }
   }

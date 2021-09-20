@@ -11,6 +11,7 @@ class CacheManager {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString(CacheManagerKey.TOKEN.toString());
   }
+  
 }
 
 enum CacheManagerKey { TOKEN }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uzel_bilisim_task/app/home/view/home_view.dart';
+import 'package:uzel_bilisim_task/app/home/home.dart';
 import 'package:uzel_bilisim_task/app/login/login.dart';
 import 'package:uzel_bilisim_task/core/auth_manager.dart';
 import 'package:provider/provider.dart';
@@ -10,13 +10,14 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+
+
   Future<void> controlToApp() async {
     await readAuthManager.fetchUserLogin();
-    if (readAuthManager.isLogin) {
+    if (readAuthManager.isLogin == true) {
       await Future.delayed(Duration(seconds: 1));
-     // readAuthManager.model = UserModel.fake();
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => HomeView().build(context)));
+          .push(MaterialPageRoute(builder: (context) => Home()));
     } else {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => Login()));

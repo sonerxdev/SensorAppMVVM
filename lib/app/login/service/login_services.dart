@@ -18,7 +18,7 @@ class LoginService extends ILoginService {
 
   @override
   Future<UserResponseModel?> getLogin(UserRequestModel model) async {
-    final response = await dio.post( ServicePath.LOGIN.rawValue, data: model, options: Options(contentType: Headers.jsonContentType));
+    final response = await dio.post( LoginPath.LOGIN.rawValue, data: model, options: Options(contentType: Headers.jsonContentType));
 
     if (response.statusCode == HttpStatus.ok) {
       return UserResponseModel().fromJson(response.data);
@@ -30,12 +30,12 @@ class LoginService extends ILoginService {
 
 
 
-enum ServicePath { LOGIN }
+enum LoginPath { LOGIN }
 
-extension ServicePathExtension on ServicePath {
+extension ServicePathExtension on LoginPath {
   String get rawValue {
     switch (this) {
-      case ServicePath.LOGIN:
+      case LoginPath.LOGIN:
         return '/api/userlogin';
     }
   }
