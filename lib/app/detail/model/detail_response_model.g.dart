@@ -8,7 +8,7 @@ part of 'detail_response_model.dart';
 
 DetailResponseModel _$DetailResponseModelFromJson(Map<String, dynamic> json) {
   return DetailResponseModel(
-    json['cihaz_no'] == null
+    cihaz_no: json['cihaz_no'] == null
         ? null
         : DeviceNo.fromJson(json['cihaz_no'] as Map<String, dynamic>),
   );

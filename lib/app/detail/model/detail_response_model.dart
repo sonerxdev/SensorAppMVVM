@@ -1,12 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'detail_response_model.g.dart';
 
+
+
+part 'detail_response_model.g.dart';
 
 @JsonSerializable()  
 class DetailResponseModel {
   DeviceNo? cihaz_no;
 
-  DetailResponseModel(this.cihaz_no);
+  DetailResponseModel({this.cihaz_no});
 
   factory DetailResponseModel.fromJson(Map<String, dynamic> json) {
     return _$DetailResponseModelFromJson(json);
@@ -17,6 +19,8 @@ class DetailResponseModel {
   }
   
 }
+
+
 
 @JsonSerializable()
 class DeviceNo  {
@@ -40,6 +44,7 @@ class DeviceNo  {
  
 }
 
+
 @JsonSerializable()
 class CihazTur {
   int? t;
@@ -59,10 +64,5 @@ class CihazTur {
 
   Map<String, Object?> toJson() {
     return _$CihazTurToJson(this);
-  }
-
-
-
- 
+  } 
 }
-

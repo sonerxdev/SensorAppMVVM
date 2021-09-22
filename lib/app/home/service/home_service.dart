@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:uzel_bilisim_task/app/home/model/user_devices_list_model.dart';
 import 'package:uzel_bilisim_task/app/home/model/user_devices_list_request.dart';
 
-
 abstract class IHomeService {
   IHomeService(this.dio);
 
@@ -13,6 +12,7 @@ abstract class IHomeService {
 
 class HomeService extends IHomeService {
   HomeService(Dio dio) : super(dio);
+
 
   @override
   Future<UserDevicesList?> getUserDevicesList(
@@ -30,9 +30,17 @@ class HomeService extends IHomeService {
       print(response.data);
       return UserDevicesList.fromJson(response.data);
     }
-
+    
     return null;
   }
+
+
+
+
+
+  
+  
+
 }
 
 enum ServicePath { PATH }

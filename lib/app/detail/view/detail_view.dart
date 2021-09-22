@@ -17,6 +17,7 @@ class DetailView extends DetailViewModel {
           children: [
             CircularProgressIndicator(),
             Text(widget.cihaz_no.toString())
+            
           ],
         ),
       ),

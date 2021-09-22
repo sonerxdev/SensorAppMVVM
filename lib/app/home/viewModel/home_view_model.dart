@@ -9,7 +9,7 @@ import 'package:uzel_bilisim_task/core/cache_manager.dart';
 import 'package:uzel_bilisim_task/core/network/network_service.dart';
 import 'package:provider/provider.dart';
 
-abstract class HomeViewModel extends State<Home> with CacheManager {
+abstract class HomeViewModel extends State<Home> with CacheManager, ChangeNotifier {
   late final HomeService homeService;
   final Dio dio = NetworkService.instance.dio;
 
@@ -39,10 +39,12 @@ abstract class HomeViewModel extends State<Home> with CacheManager {
       ),
     );
 
-
     if (response?.token != null) {
       userDevicesList = response;
       _models = userDevicesList?.cihaz_no;
     }
+    notifyListeners();
   }
 }
+
+

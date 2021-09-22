@@ -1,8 +1,14 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uzel_bilisim_task/app/home/home.dart';
+import 'package:uzel_bilisim_task/app/home/service/home_service.dart';
+import 'package:uzel_bilisim_task/app/home/viewModel/home_view_model.dart';
 import 'package:uzel_bilisim_task/app/splash/splash.dart';
 import 'package:uzel_bilisim_task/core/auth_manager.dart';
+import 'package:uzel_bilisim_task/core/base/base_service.dart';
+import 'package:uzel_bilisim_task/core/network/network_service.dart';
+
 
 void main() {
   runApp(
@@ -10,10 +16,10 @@ void main() {
       providers: [
         Provider<AuthenticationManager>(
           create: (context) => AuthenticationManager(context: context),
-        ), 
-         Provider<Home>(
-          create: (context) => Home(),
-        ), 
+        ),
+        ChangeNotifierProvider(
+          create: (_) => HomeViewModel(),
+        )
       ],
       child: MyApp(),
     ),
@@ -24,6 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Uzel Bilisim',
       theme: ThemeData(
         primarySwatch: Colors.blue,

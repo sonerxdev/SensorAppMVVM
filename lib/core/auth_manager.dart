@@ -5,7 +5,8 @@ class AuthenticationManager extends CacheManager {
   BuildContext context;
   AuthenticationManager({
     required this.context,
-  }) {
+  }
+  ) {
     fetchUserLogin();
   }
 
