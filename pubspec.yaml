@@ -26,7 +26,9 @@ dependencies:
   dio: any
   flutter:
     sdk: flutter
+  flutter_feather_icons: ^2.0.0+1
   flutter_svg: ^0.22.0
+  google_fonts: ^2.1.0
   json_annotation: any
   json_serializable: any
   lottie: ^1.2.0

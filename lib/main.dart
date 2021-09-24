@@ -1,3 +1,4 @@
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +9,7 @@ import 'package:uzel_bilisim_task/app/splash/splash.dart';
 import 'package:uzel_bilisim_task/core/auth_manager.dart';
 import 'package:uzel_bilisim_task/core/base/base_service.dart';
 import 'package:uzel_bilisim_task/core/network/network_service.dart';
-
+final Dio dio = NetworkService.instance.dio;
 
 void main() {
   runApp(
@@ -18,7 +19,7 @@ void main() {
           create: (context) => AuthenticationManager(context: context),
         ),
         ChangeNotifierProvider(
-          create: (_) => HomeViewModel(),
+          create: (_) => HomeService(dio),
         )
       ],
       child: MyApp(),
