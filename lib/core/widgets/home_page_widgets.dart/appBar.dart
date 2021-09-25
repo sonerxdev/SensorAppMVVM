@@ -19,7 +19,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         )
       ],
       title: Text(
-        'Smart Home',
+        'Smart Sensors',
         style: GoogleFonts.yantramanav(
           textStyle: TextStyle(
             fontSize: 30,
