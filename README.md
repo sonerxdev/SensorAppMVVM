@@ -13,6 +13,7 @@
  
  ### My Application Design
  
- <img src="assets/images/1.png" width=240 height:80> <img src="assets/images/2.png" width=240 height:80> 
- <img src="assets/images/3.png" width=240 height:80> <img src="assets/images/4.png" width=240 height:80>
+ <img src="assets/images/task1.png" width=240 height:80> <img src="assets/images/task2.png" width=240 height:80> 
+ 
+ <img src="assets/images/task3.png" width=240 height:80> <img src="assets/images/task4.png" width=240 height:80>
  
