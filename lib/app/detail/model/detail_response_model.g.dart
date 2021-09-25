@@ -8,34 +8,31 @@ part of 'detail_response_model.dart';
 
 DetailResponseModel _$DetailResponseModelFromJson(Map<String, dynamic> json) {
   return DetailResponseModel(
-    cihaz_no: json['cihaz_no'] == null
+    the100000291: json['the100000291'] == null
         ? null
-        : DeviceNo.fromJson(json['cihaz_no'] as Map<String, dynamic>),
+        : The100000291.fromJson(json['the100000291'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$DetailResponseModelToJson(
         DetailResponseModel instance) =>
     <String, dynamic>{
-      'cihaz_no': instance.cihaz_no,
+      'the100000291': instance.the100000291,
     };
 
-DeviceNo _$DeviceNoFromJson(Map<String, dynamic> json) {
-  return DeviceNo(
+The100000291 _$The100000291FromJson(Map<String, dynamic> json) {
+  return The100000291(
     cihaz_no: json['cihaz_no'] as int?,
     cihaz_tur: (json['cihaz_tur'] as List<dynamic>?)
         ?.map((e) => CihazTur.fromJson(e as Map<String, dynamic>))
         .toList(),
-    cihaz_last_data: (json['cihaz_last_data'] as List<dynamic>?)
-        ?.map((e) => e as String)
-        .toList(),
   );
 }
 
-Map<String, dynamic> _$DeviceNoToJson(DeviceNo instance) => <String, dynamic>{
+Map<String, dynamic> _$The100000291ToJson(The100000291 instance) =>
+    <String, dynamic>{
       'cihaz_no': instance.cihaz_no,
       'cihaz_tur': instance.cihaz_tur,
-      'cihaz_last_data': instance.cihaz_last_data,
     };
 
 CihazTur _$CihazTurFromJson(Map<String, dynamic> json) {

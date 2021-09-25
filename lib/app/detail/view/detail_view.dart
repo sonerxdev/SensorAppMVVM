@@ -8,6 +8,7 @@ class DetailView extends DetailViewModel {
     fetchUserDevicesListLog();
   }
 
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +17,7 @@ class DetailView extends DetailViewModel {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircularProgressIndicator(),
-            Text(widget.cihaz_no.toString())
+          //  Text(widget.cihaz_no.toString())
             
           ],
         ),

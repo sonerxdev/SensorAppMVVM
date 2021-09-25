@@ -42,13 +42,14 @@ abstract class DetailViewModel extends State<Detail> with CacheManager {
       ),
     );
 
-    print(response?.cihaz_no);
+    print("response sudur: ");
+    print(response?.the100000291);
 
-    if (response?.cihaz_no != null) {
+    if (response?.the100000291 != null) {
       print("detail sayfasinin response u:");
       print(response);
       _userDevicesList = response;
-      _models = _userDevicesList?.cihaz_no?.cihaz_tur;
+      _models = _userDevicesList?.the100000291?.cihaz_tur;
     }
   }
 }

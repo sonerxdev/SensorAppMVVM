@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:uzel_bilisim_task/core/base/base_model.dart';
 
 part 'detail_request_model.g.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:uzel_bilisim_task/app/login/viewModel/login_view_model.dart';
 import 'package:uzel_bilisim_task/core/widgets/login_background.dart';
@@ -27,8 +28,14 @@ class LoginView extends LoginViewModel {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Giriş Yap",
-                  style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.w400),
+                  "Giris Yap",
+                  style: GoogleFonts.yantramanav(
+                    textStyle: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
                 LottieBuilder.asset(
                   "assets/images/1.json",
