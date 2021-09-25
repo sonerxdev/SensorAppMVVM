@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uzel_bilisim_task/core/base/base_state.dart';
 import 'package:uzel_bilisim_task/core/widgets/constants.dart';
-import 'package:uzel_bilisim_task/core/widgets/home_page_widgets.dart/sensorsListWidget.dart';
 
 class TabViewWidget extends StatelessWidget {
 

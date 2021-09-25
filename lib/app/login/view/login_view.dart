@@ -19,49 +19,59 @@ class LoginView extends LoginViewModel {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Background(
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Giris Yap",
-                  style: GoogleFonts.yantramanav(
-                    textStyle: TextStyle(
-                      fontSize: 30,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Background(
+          child: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Giris Yap",
+                    style: GoogleFonts.yantramanav(
+                      textStyle: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
-                ),
-                LottieBuilder.asset(
-                  "assets/images/1.json",
-                  height: size.height * 0.30,
-                ),
-                SizedBox(height: size.height * 0.03),
-                RoundedInputField(
-                  controller: controllerEmail,
-                  hintText: "Email",
-                  onChanged: (value) {},
-                ),
-                RoundedPasswordField(
-                  controller: controllerPassword,
-                  onChanged: (value) {},
-                ),
-                RoundedButton(
-                  text: "Giriş Yap",
-                  press: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      fetchUserLogin(
-                          controllerEmail.text, controllerPassword.text);
-                    }
-                  },
-                ),
-                SizedBox(height: size.height * 0.03),
-              ],
+                  LottieBuilder.asset(
+                    "assets/images/1.json",
+                    height: size.height * 0.30,
+                  ),
+                  SizedBox(height: size.height * 0.03),
+                  RoundedInputField(
+                     validator: (input) => (input!.length.toInt() < 5 ||
+                            !input.contains("@")
+                        ? ' Geçerli bir mail adresi girin.'
+                        : null),
+                    controller: controllerEmail,
+                    hintText: "Email",
+                    onChanged: (value) {},
+                  ),
+                  RoundedPasswordField(
+                    validator: (input) => (input!.length.toInt() < 5 
+                        ? ' Geçerli bir şifre girin.'
+                        : null),
+                    controller: controllerPassword,
+                    onChanged: (value) {},
+                  ),
+                  RoundedButton(
+                    text: "Giriş Yap",
+                    press: () {
+                      if (_formKey.currentState?.validate() ?? false) {
+                        fetchUserLogin(
+                            controllerEmail.text, controllerPassword.text);
+                      }
+                    },
+                  ),
+                  SizedBox(height: size.height * 0.03),
+                ],
+              ),
             ),
           ),
         ),
@@ -69,18 +79,3 @@ class LoginView extends LoginViewModel {
     );
   }
 }
-
-
-// onPressed: () {
-//             if (formKey.currentState?.validate() ?? false) {
-//               fetchUserLogin(controllerEmail.text, controllerPassword.text);
-//             }
-//           },
-
-
-
-//  Form(
-//               key: formKey,
-//               autovalidateMode: AutovalidateMode.onUserInteraction,
-//               child: buildWrapFormBody()
-//               ,)

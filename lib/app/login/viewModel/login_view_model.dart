@@ -25,11 +25,44 @@ abstract class LoginViewModel extends State<Login>
     );
 
     if (response?.app_token != null) {
-      print("bu login printi: ");
-      print(response?.app_token);
       saveToken(response?.app_token ?? '');
       navigateToHome();
+        setState(() {
+        SnackBar snackBar = SnackBar(
+          content: Text(
+            "Giriş yapma başarılı!",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 17.0,
+                fontWeight: FontWeight.w300),
+          ),
+          backgroundColor: Colors.greenAccent,
+          duration: Duration(milliseconds: 2000),
+          elevation: 20.0,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      });
     }
+
+    else if(response?.app_token == null){
+      setState(() {
+        SnackBar snackBar = SnackBar(
+          content: Text(
+            "Şifre ya da E-Posta Hatalı!",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 17.0,
+                fontWeight: FontWeight.w300),
+          ),
+          backgroundColor: Colors.red,
+          duration: Duration(milliseconds: 2000),
+          elevation: 20.0,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+       
+      });
+    }
+
   }
 
   void navigateToHome() {

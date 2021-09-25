@@ -3,9 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:uzel_bilisim_task/app/home/model/user_devices_list_model.dart';
 import 'package:uzel_bilisim_task/app/home/model/user_devices_list_request.dart';
-import 'package:uzel_bilisim_task/core/auth_manager.dart';
 import 'package:uzel_bilisim_task/core/cache_manager.dart';
-import 'package:uzel_bilisim_task/core/network/network_service.dart';
 import 'package:provider/provider.dart';
 
 
@@ -23,8 +21,7 @@ class HomeService extends IHomeService with ChangeNotifier, CacheManager{
   @override
   Future<UserDevicesList?> getUserDevicesList(
       UserDevicesListRequest? model) async {
-    print("Homeservice modeli: ");
-    print(model?.userid);
+
     final response = await dio.post(
       ServicePath.PATH.rawValue,
       data: model,
@@ -32,8 +29,6 @@ class HomeService extends IHomeService with ChangeNotifier, CacheManager{
     );
 
     if (response.statusCode == HttpStatus.ok) {
-      print("response Statuscode OK");
-      print(response.data);
       return UserDevicesList.fromJson(response.data);
     }
     
@@ -41,23 +36,12 @@ class HomeService extends IHomeService with ChangeNotifier, CacheManager{
   }
 
 
-
-
-
- // late final HomeService homeService;
- // final Dio dio = NetworkService.instance.dio;
-
   UserDevicesList? userDevicesList;
 
   List<CihazNo>? _models = [];
 
   List<CihazNo>? get model1 => _models;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   homeService = HomeService(dio);
-  // }
 
 
   Future<void> fetchUserDevicesList() async {
@@ -75,6 +59,7 @@ class HomeService extends IHomeService with ChangeNotifier, CacheManager{
       userDevicesList = response;
       _models = userDevicesList?.cihaz_no;
     }
+    
     notifyListeners();
   }
   

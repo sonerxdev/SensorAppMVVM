@@ -1,10 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:uzel_bilisim_task/app/home/home.dart';
-import 'package:uzel_bilisim_task/app/home/model/user_devices_list_model.dart';
-import 'package:uzel_bilisim_task/app/home/model/user_devices_list_request.dart';
 import 'package:uzel_bilisim_task/app/home/service/home_service.dart';
-import 'package:uzel_bilisim_task/core/auth_manager.dart';
 import 'package:uzel_bilisim_task/core/cache_manager.dart';
 import 'package:uzel_bilisim_task/core/network/network_service.dart';
 import 'package:provider/provider.dart';

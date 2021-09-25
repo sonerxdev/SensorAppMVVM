@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:uzel_bilisim_task/app/detail/detail.dart';
 import 'package:uzel_bilisim_task/app/home/service/home_service.dart';
 import 'package:uzel_bilisim_task/app/home/viewModel/home_view_model.dart';
 import 'package:uzel_bilisim_task/core/widgets/home_page_widgets.dart/appBar.dart';

@@ -4,8 +4,6 @@ import 'package:uzel_bilisim_task/app/detail/detail.dart';
 import 'package:uzel_bilisim_task/app/detail/model/detail_request_model.dart';
 import 'package:uzel_bilisim_task/app/detail/model/detail_response_model.dart';
 import 'package:uzel_bilisim_task/app/detail/service/detail_service.dart';
-import 'package:uzel_bilisim_task/app/home/model/user_devices_list_model.dart';
-import 'package:uzel_bilisim_task/app/home/service/home_service.dart';
 import 'package:uzel_bilisim_task/core/auth_manager.dart';
 import 'package:uzel_bilisim_task/core/cache_manager.dart';
 import 'package:uzel_bilisim_task/core/network/network_service.dart';
