@@ -1,11 +1,12 @@
 # Flutter MVVM Sensor App
-#### -  This project made for a sensors company task. The app is making POST request and getting data from response.
+#### -  The app is making POST and GET request and getting data from response.
  
  ### The app is coding with:
  
  #### -MVVM Design Pattern
  #### -Dio
  #### -Json Serializable
+ #### -Build runner
  #### -Provider State Management
  #### -Shared Preferences
  #### -Lottie 
